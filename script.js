@@ -6,37 +6,22 @@ numbers.forEach(button => {
     let currentValue = field.textContent || "0";
 
     if(button.id ==="calc"){ 
-        let result;
-        if(currentValue.includes('+')){
-            let[a ,b] = currentValue.split('+');
-            result = parseFloat(a) + parseFloat(b);
-        }else if(currentValue.includes('-')){
-            let[a, b] = currentValue.split('-');
-            result = parseFloat(a) - parseFloat(b);
-        }else if(currentValue.includes('*')){
-            let[a, b] = currentValue.split('*');
-            result = parseFloat(a) * parseFloat(b);
-        }else if(currentValue.includes('/')){
-            let[a, b] = currentValue.split('/');
-            result = parseFloat(a) / parseFloat(b);
-        }else if(currentValue.includes('%')){
-            result = parseFloat(currentValue) / 100;
-        currentValue = result 
+        let result = operator(currentValue);
+        field.textContent = result;
+        return;
+  
     }
-    field.textContent = result;
-    return;
-}
    
     
     if(button.id === "clear"){
         field.textContent ='0'
     }else{
-
+    
     if(button.id ==="del"){
-        if(currentValue.startsWith("-")){
-            field.textContent = currentValue.slice(1);
+        if(currentValue.length>1){
+            field.textContent = currentValue.slice(0, -1);
         }else{
-            field.textContent = "-" + currentValue;
+            field.textContent = "0"
         }
     }else{
         if(currentValue === "0"){
@@ -48,8 +33,23 @@ numbers.forEach(button => {
   });
 });
 
-document.getElementById("clear").addEventListener('click', function(){
-    let field = document.getElementById("content");
-    let currentValue = parseInt(field.textContent) | 0
-    field.textContent = '0'
-});
+
+function operator(expression){
+    let result;
+    if(expression.includes('+')){
+        let[a ,b] = expression.split('+');
+        result = parseFloat(a) + parseFloat(b);
+    }else if(expression.includes('-')){
+        let[a, b] = expression.split('-');
+        result = parseFloat(a) - parseFloat(b);
+    }else if(expression.includes('*')){
+        let[a, b] = expression.split('*');
+        result = parseFloat(a) * parseFloat(b);
+    }else if(expression.includes('/')){
+        let[a, b] = expression.split('/');
+        result = parseFloat(a) / parseFloat(b);
+    }else if(expression.includes('%')){
+        result = parseFloat(expression) / 100;
+}
+return result;
+};
