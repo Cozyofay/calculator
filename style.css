@@ -1,0 +1,91 @@
+body{
+    display: flex;
+    height: 100vh;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 360px;
+    padding: 5px;
+    border: 5px solid rgb(8, 9, 92);
+    background-color: rgb(48, 46, 58);
+
+}
+.btnCont{
+    display: flex;
+    width: 360px;
+    height: 500px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: flex-start;
+
+}
+
+.text{
+    align-content: center;
+    align-self: flex-end;
+    font-size: 60px;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    height: 90px;
+    width: 350px;
+    border: 5px solid black;
+    background-color: rgb(201, 190, 190);
+    text-align: end;
+}
+
+.numbers{
+    text-align: center;
+    align-content: center;
+    font-size: 30px;
+    background-color: rgb(145, 255, 0);
+    width: 86px;
+    height: 75px;
+    border: 2px solid rgb(48, 48, 58);
+    cursor: pointer; /* Add pointer cursor to indicate it's clickable */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+    border-radius: 10px;
+
+}
+
+#enter{
+    width: 92%;
+    background-color: rgb(122, 121, 106);
+}
+
+.numbers:hover {
+    background-color: rgb(31, 122, 66); /* Change background color on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
+}
+
+
+#zero{
+    flex-grow: 1;
+}
+
+.numbers.sign{
+    background-color: rgb(119, 18, 201);
+}
+
+.numbers.cont{
+    background-color: rgb(25, 120, 202);
+}
+
+
+.numbers.cont:hover{
+    background-color: rgb(15, 86, 133); /* Change background color on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
+}
+
+.numbers.sign:hover{
+    background-color: rgb(92, 5, 155); /* Change background color on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
+}
